@@ -1,0 +1,35 @@
+name: CI
+on:
+push:
+branches: [main, master]
+pull_request:
+branches: [main, master]
+jobs:
+build:
+runs-on: ubuntu-latest
+steps:
+# ---------- 1. Checkout ----------
+  - uses: actions/checkout@v4
+# ---------- 2. Node 18 + Yarn cache ----------
+  - uses: actions/setup-node@v4
+    with:
+      node-version: 18
+      cache: 'yarn'          # caches ~/.cache/yarn
+
+  # ---------- 3. Install dependencies ----------
+  - run: yarn install --frozen-lockfile
+
+  # ---------- 4. Type-check ----------
+  - run: yarn tsc --noEmit
+
+  # ---------- 5. Test ----------
+  - run: yarn jest --passWithNoTests
+
+  # ---------- 6. Build web bundle ----------
+  - run: yarn expo export:web
+
+  # ---------- 7. Upload artifact ----------
+  - uses: actions/upload-artifact@v4
+    with:
+      name: web-build
+      path: web-build/          # default output folder for expo export:web
