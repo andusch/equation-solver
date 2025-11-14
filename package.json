@@ -12,9 +12,9 @@
     "expo": "~54.0.23",
     "expo-status-bar": "~3.0.8",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "react-dom": "^19.1.0",
     "react-native": "0.81.5",
-    "react-native-web": "^0.21.0"
+    "react-native-web": "^0.21.2"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
@@ -23,5 +23,9 @@
     "ts-jest": "^29.4.5",
     "typescript": "~5.9.2"
   },
-  "private": true
+  "private": true,
+  "scripts": {
+    "build:web": "expo build:web --no-dev --output-dir web-build"
+  }
 }
+
