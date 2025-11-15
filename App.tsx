@@ -1,8 +1,11 @@
-import { Text, View } from 'react-native';
+import React from 'react';
+import { SafeAreaView } from 'react-native';
+import MatrixInput2x2 from './src/components/MatrixInput2x2';
+
 export default function App() {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{ fontSize: 32 }}>Gaussian Elimination</Text>
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <MatrixInput2x2 />
+    </SafeAreaView>
   );
 }
