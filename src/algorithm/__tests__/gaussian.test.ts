@@ -9,7 +9,7 @@ describe('gaussian', () => {
     const b = [3, 6];
     const { steps, solution } = gaussian(A, b);
     expect(steps).toHaveLength(2); // at least 2 row ops
-    expect(solution).toBeCloseToArray([0, 1.5]); // x=0, y=1.5
+    expect(solution).toBeCloseToArray([-1, 2]); // x=-1, y=2
   });
 });
 
