@@ -4,8 +4,8 @@ import DynamicMatrixInput from './src/components/DynamicMatrixInput';
 
 export default function App() {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    //<SafeAreaView style={{ flex: 1 }}>
       <DynamicMatrixInput />
-    </SafeAreaView>
+    //</SafeAreaView>
   );
 }
