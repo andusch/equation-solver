@@ -18,7 +18,6 @@ export default function DynamicMatrixInput() {
   const { systems, save, load, remove } = useSystems();
   const [saveName, setSaveName] = React.useState("");
 
-  // build empty augmented matrix when size changes
   React.useEffect(() => {
     const m = Array.from({ length: size }, () => Array(size + 1).fill(0));
     setMatrix(m);
